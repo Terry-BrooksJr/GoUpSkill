@@ -1,22 +1,31 @@
 package main
+
 import (
-	"strings"
 	"fmt"
+	"strings"
 )
 
-func main( ) {
-	var input string
-	var ianCheck Bool
-	fmt.Println("Please Enter a String")
-	fmt.Scan(&input)
 
-	if strings.ContainsAny("ian"){
-		ianCheck = true
-		fmt.Print(ianCheck)
-		return ianCheck
-	} else {
-		ianCheck = false
-		fmt.Print(ianCheck)
-		return ianCheck
-	}
+
+func stringSearch(input string) bool {
+		var results bool
+		if strings.ContainsAny(input,"ian"){
+			results = true
+			fmt.Println(results)
+			return results
+		} else {
+			results = false
+			fmt.Println(results)
+			return results
+		}	
+}
+func main( ) {
+var userInput string
+// var ianCheck bool	
+fmt.Print("Please Enter a String: \n")
+fmt.Scan(&userInput)
+stringSearch(userInput)
+main()
+
+	
 }
