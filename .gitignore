@@ -10,7 +10,7 @@
 .history/*
 # Test binary, built with `go test -c`
 *.test
-*/.DS_Store 
+*/.DS_Store/*
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
 
@@ -24,3 +24,5 @@ Coursera/getting-started-with-go_W3/.history/src/*
 Coursera/getting-started-with-go_W4/.history/src/*
 
 
+Coursera/.DS_Store/*
+*/.DS_Store
