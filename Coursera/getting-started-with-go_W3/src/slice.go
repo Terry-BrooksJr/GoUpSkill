@@ -2,46 +2,36 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"sort"
-	"strings"
 )
 
-func reAsk() bool {
-	fmt.Println("Do You Have Any Integers to Add?  Y/N")
-	fmt.Scan(&reAsk)
-	if strings.ToLower(reAsk[0:1]) == "y" {
-		return true 
-	} else {
-		return false
-	}
-
-}
-
-func makeSlice(num ...int) []int {
-	slice := make([]int, len(num))
-	sort.Ints(slice)
-	return slice
-}
-
-func collectNumbersFromUser() []int {
-	var results []int = make([] int, 1)
-	var userValue int
-	var addNumbers bool
-	addNumbers = reAsk()
-	for (addNumbers) {
-		addNumbers = reAsk()2
-	}
-	if addNumbers != true {
-		
-	}
-	}
-	fmt.Scan(&userValue)
-	results = append(results, userValue)
-return results
-
-}
-
 func main() {
-	
+	var sliceLength int
+	fmt.Println("How Long is this Slice? 3 or 4 Digits")
+	fmt.Scan(&sliceLength)
+	if sliceLength == 4 {
+		var num1, num2, num3, num4 int
+		fmt.Println("What is the First Number?")
+		fmt.Scan(&num1)
+		fmt.Println("What is the Second Number?")
+		fmt.Scan(&num2)
+		fmt.Println("What is the Third Number?")
+		fmt.Scan(&num3)
+		fmt.Println("What is the Fourth Number?")
+		fmt.Scan(&num4)
+		result := []int{num1, num2, num3, num4}
+		sort.Ints(result)
+		fmt.Println(result)
+	} else if sliceLength == 3 {
+		var num1, num2, num3 int
+		fmt.Println("What is the First Number?")
+		fmt.Scan(&num1)
+		fmt.Println("What is the Second Number?")
+		fmt.Scan(&num2)
+		fmt.Println("What is the Third Number?")
+		fmt.Scan(&num3)
+		result := []int{num1, num2, num3}
+		sort.Ints(result)
+		fmt.Println(result)
+	}
 }
