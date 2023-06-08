@@ -34,4 +34,6 @@ func main() {
 		sort.Ints(result)
 		fmt.Println(result)
 	}
+	// trunk-ignore(golangci-lint/staticcheck)
+	main()
 }
