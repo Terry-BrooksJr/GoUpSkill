@@ -3,44 +3,34 @@ package main
 import (
 	"fmt"
 	"encoding/json"
+	"bufio"
+	"os"
 )
 
-type struct Contact {
-	name string
-	address string
-	city string
-	state string
-	postalCode int
+type  ContactInfo struct {
+	Name string
+	Address string
+
 }
 
-func newContact(name string, address string, city string, state string, postalCode int) Contact {
-	newContactAX := Contact {name : name}
-	newContact.address = address
-	newContact.city = city
-	newContact.state = state
-	newContact.postalCode = postalCode
-	return newContact
-}
 
-func structToJSON(input struct){
-	json.Marshall()
-}
+func structToJSON(contact ContactInfo ) []byte {
+	jsonofied, _ := json.Marshal(contact)
+	return jsonofied
+	}
+
 func main(){
-	var postalCode int
-	var name string
-	fmt.Println("Please Enter Contact Name\n")
-	fmt.Scan(&name)
-	var address string
-	fmt.Println("Please Enter Street Address\n")
-	fmt.Scan(&address)
-	var city string
-	fmt.Println("Please Enter City\n")
-	fmt.Scan(&city)
-	var state string
-	fmt.Println("Please Enter Street Address\n")
-	fmt.Scan(&state)
-	fmt.Println("Please Enter Street Address\n")
-	fmt.Scan(&postalCode)
 
-	newContact(name, address, city, state, postalCode)
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Println("Please Enter Contact Name")
+	name, _ := reader.ReadString('\n')
+	fmt.Println("Please Enter Street Address")
+	address, _ := reader.ReadString('\n')
+
+	contact := ContactInfo {
+		Name: name,
+		Address: address,
+	}
+	fmt.Println(string(structToJSON(contact)));
+
 }
